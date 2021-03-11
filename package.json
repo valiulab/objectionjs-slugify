@@ -1,0 +1,32 @@
+{
+  "name": "objectionjs-slugify",
+  "version": "0.1.0",
+  "description": "Package to make easy slugify on ObjectionJS ORM",
+  "main": "dist/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralcorta/nestjs-slugify.git"
+  },
+  "author": "Rodrigo Victor Alcorta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ralcorta/nestjs-slugify/issues"
+  },
+  "homepage": "https://github.com/ralcorta/nestjs-slugify#readme",
+  "dependencies": {
+    "knex": "^0.21.18",
+    "objection": "^2.2.14",
+    "reflect-metadata": "^0.1.13",
+    "slugify": "^1.4.7",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
+  }
+}
