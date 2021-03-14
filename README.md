@@ -20,7 +20,7 @@ $ npm i -S objectionjs-slugify
 You only need put @Sluggable([...propsName])	above the property with the properties to generate it.	  
 
 ```typescript
-# This options are from slugify package, see more on the official documentation.
+// This options are from slugify package, see more on the official documentation.
 const SlugBaseConfig: ISlugConfig = {
     replacement: '-',
     remove: undefined,
@@ -39,7 +39,7 @@ class  Person  extends  Model {
 	firstname:  string;
 	lastname:  string;
 
-	# The options are optionals
+	// The options are optionals
 	@Sluggable(['firstname', 'lastname'], SlugBaseConfig)
 	slug?:  string;
 }
