@@ -14,7 +14,6 @@ $ npm i -S objectionjs-slugify
 
 ```
 
-
 ## How to use
 
 You only need put @Sluggable([...propsName])	above the property with the properties to generate it.	  
