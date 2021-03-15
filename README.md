@@ -2,9 +2,9 @@
 
 ## Slugify
 
-Make easy turn into sluggable a property from a Objectionjs model. This package is based on [slugify](https://www.npmjs.com/package/slugify).
+With this package you can easily turn a property from an ObjectionJS model into a sluggable. This package is based on [slugify](https://www.npmjs.com/package/slugify).
 
-[ObjectionJS](https://vincit.github.io/objection.js/) is an ORM (opens new window)for Node.js (opens new window)that aims to stay out of your way and make it as easy as possible to use the full power of SQL and the underlying database engine while still making the common stuff easy and enjoyable.
+[ObjectionJS](https://vincit.github.io/objection.js/) is an ORM for Node.js that aims to stay out of your way and make it as easy as possible to use the full power of SQL and the underlying database engine while still making the common stuff easy and enjoyable.
 
 ## Installation
 
@@ -16,7 +16,7 @@ $ npm i -S objectionjs-slugify
 
 ## How to use
 
-You only need put @Sluggable([...propsName])	above the property with the properties to generate it.	  
+You only need put @Sluggable([...propsName])	above the property that will store the slug, indicating which properties to use to generate it.
 
 ```typescript
 // This options are from slugify package, see more on the official documentation.
