@@ -1,7 +1,7 @@
-import { ISlugConfig } from './slug.config';
+import { ISlugConfig } from '../config/slug.config';
 import { Model } from 'objection';
 import slugify from 'slugify';
-import { Utils } from './utils';
+import { Utils } from '../utils/utils';
 import { v4 as uuidv4 } from 'uuid';
 
 export class SluggableService {
