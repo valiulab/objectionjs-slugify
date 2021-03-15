@@ -1,7 +1,7 @@
-import { SluggableService } from './slugify.service';
+import { SluggableService } from '../service/slugify.service';
 import "reflect-metadata";
-import { ReflectSlugProp } from "./constants/symbols";
-import { SlugBaseConfig, ISlugConfig } from "./config/slug.config";
+import { ReflectSlugProp } from "../constants/symbols";
+import { SlugBaseConfig, ISlugConfig } from "../config/slug.config";
 import { Model, QueryContext } from "objection";
 
 export const Sluggable = (propsNames: string[], config?: ISlugConfig) => (target: Model, propertyKey: string) => {
