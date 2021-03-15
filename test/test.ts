@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { Sluggable } from "../src/slug.decorator";
+import { Sluggable } from "../src/decorator/slug.decorator";
 import { Model } from 'objection';
 import Knex from 'knex';
 import mockKnex from 'mock-knex';
