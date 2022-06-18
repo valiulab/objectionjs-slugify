@@ -12,6 +12,7 @@ export const Sluggable = (propsNames: string[], config?: ISlugConfig) => (target
         strict: config?.strict ?? SlugBaseConfig.strict,
         locale: config?.locale ?? SlugBaseConfig.locale,
         edit: config?.edit ?? SlugBaseConfig.edit,
+        lenghtSuffix: config?.lenghtSuffix ?? SlugBaseConfig.lenghtSuffix
     };
 
     Reflect.defineMetadata(ReflectSlugProp, propertyKey, target);

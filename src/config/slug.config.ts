@@ -5,6 +5,7 @@ export interface ISlugConfig {
     strict?: boolean,     // strip special characters except replacement, defaults to `false`
     locale?: string,       // language code of the locale to use
     edit?: boolean,
+    lenghtSuffix?: number
 }
 
 export const SlugBaseConfig = {
@@ -14,4 +15,5 @@ export const SlugBaseConfig = {
     strict: true,
     locale: 'v1',
     edit: true,
+    lenghtSuffix: 20,
 }

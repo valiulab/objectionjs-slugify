@@ -3,30 +3,25 @@ import { Sluggable } from "../src/decorator/slug.decorator";
 import { Model } from 'objection';
 import Knex from 'knex';
 import mockKnex from 'mock-knex';
+
 var db = Knex({
-    client: 'pg',
-    useNullAsDefault: true,
+  client: 'sqlite',
+  useNullAsDefault: true,
 });
-
 mockKnex.mock(db);
-// mockKnex.unmock(db);
-
 const tracker = mockKnex.getTracker();
-
 Model.knex(db);
 
-class A extends Model {
-    static tableName = 'testModelA'
+class PersonTestModel extends Model {
+  static tableName = 'people'
+  firstname: string;
+  lastname: string;
 
-    firstname: string;
-
-    lastname: string;
-
-    @Sluggable(['firstname', 'lastname'])
-    slug?: string;
+  @Sluggable(['firstname', 'lastname'])
+  slug?: string;
 }
 
-describe("test sluggable feature", () => {
+describe("[Slug] sluggable feature test", () => {
   beforeEach((done) => {
     tracker.install();
     done();
@@ -39,21 +34,23 @@ describe("test sluggable feature", () => {
 
   it("should return true if slug is created from props with slug repited", async () => {
     tracker.on('query', function sendResult(query, step) {
-        [
-          function firstQuery() {
-            query.response([{id: 1, slug: 'rodrigo-alcorta'}]);
-          },
-          function secondQuery() {
-            query.response({id: 2});
-          }
-        ][step - 1]();
+      [
+        function () {
+          query.response([{ id: 1, slug: 'rodrigo-alcorta' }]);
+        },
+        function () {
+          query.response([null]);
+        },
+        function () {
+          query.response([null]);
+        }
+      ][step - 1]();
     });
-        
-    const obj = new A();
+    const obj = new PersonTestModel();
     obj.firstname = "Rodrigo"
     obj.lastname = "Alcorta"
-    const objWithSlug = await A.query().insert(obj);
-
+    const objWithSlug = await PersonTestModel.query().insert(obj);
+    console.log(objWithSlug.slug);
     expect(objWithSlug.slug).toMatch(/^rodrigo-alcorta-/);
   });
 
@@ -61,12 +58,10 @@ describe("test sluggable feature", () => {
     tracker.on('query', function sendResult(query) {
       query.response(null);
     });
-
-    const obj = new A();
+    const obj = new PersonTestModel();
     obj.firstname = "Rodrigo"
     obj.lastname = "Alcorta"
-    const objWithSlug = await A.query().insert(obj);
-
+    const objWithSlug = await PersonTestModel.query().insert(obj);
     expect(objWithSlug.slug).toMatch('rodrigo-alcorta');
   });
 });

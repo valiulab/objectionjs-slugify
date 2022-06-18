@@ -1,6 +1,6 @@
 {
   "name": "objectionjs-slugify",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Package to make easy slugify on ObjectionJS ORM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,14 +20,9 @@
   "homepage": "https://github.com/ralcorta/nestjs-slugify#readme",
   "dependencies": {
     "knex": "^0.21.19",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.2.5",
     "objection": "^2.2.14",
-    "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
-    "slugify": "^1.4.7",
-    "sqlite3": "^5.0.2",
-    "uuid": "^8.3.2"
+    "slugify": "^1.4.7"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
