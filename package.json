@@ -6,7 +6,12 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "prepublish": "tsc"
+    "build": "npx tsc",
+    "doc": "typedoc --theme oxide --name 'Objectionjs Relationship' --out docs src/index.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run build",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -20,6 +25,8 @@
   "homepage": "https://github.com/ralcorta/nestjs-slugify#readme",
   "dependencies": {
     "knex": "^0.21.19",
+    "typedoc-theme-oxide": "^0.1.6",
+    "typedoc": "^0.22.17",
     "objection": "^2.2.14",
     "reflect-metadata": "^0.1.13",
     "slugify": "^1.4.7"
