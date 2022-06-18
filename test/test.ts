@@ -50,7 +50,6 @@ describe("[Slug] sluggable feature test", () => {
     obj.firstname = "Rodrigo"
     obj.lastname = "Alcorta"
     const objWithSlug = await PersonTestModel.query().insert(obj);
-    console.log(objWithSlug.slug);
     expect(objWithSlug.slug).toMatch(/^rodrigo-alcorta-/);
   });
 

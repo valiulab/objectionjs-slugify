@@ -18,7 +18,6 @@ export class SluggableService {
   private async makeUnique(modelClass: ModelClass<Model>, slugPropName: string, slug: string, uniqueId?: string) {
     let finalSlug = !uniqueId ? slug : `${slug}${this.config.replacement}${uniqueId}`
     let elem = await modelClass.query().where(slugPropName, finalSlug).first();
-    console.log({ elem })
     if (!elem)
       return finalSlug;
     return await this.makeUnique(modelClass, slugPropName, slug, Utils.randomString(this.config.lenghtSuffix));
