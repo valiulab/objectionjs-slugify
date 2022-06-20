@@ -27,7 +27,7 @@
     "knex": "^0.21.19",
     "typedoc-theme-oxide": "^0.1.6",
     "typedoc": "^0.22.17",
-    "objection": "^2.2.14",
+    "objection": "github:ralcorta/objection.js",
     "reflect-metadata": "^0.1.13",
     "slugify": "^1.4.7"
   },

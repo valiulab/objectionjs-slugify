@@ -53,7 +53,7 @@ describe("[Slug] sluggable feature test", () => {
     expect(objWithSlug.slug).toMatch(/^rodrigo-alcorta-/);
   });
 
-  it("should return true if slug is created from props with slug repited", async () => {
+  it("should created from props with correct slug", async () => {
     tracker.on('query', function sendResult(query) {
       query.response(null);
     });
