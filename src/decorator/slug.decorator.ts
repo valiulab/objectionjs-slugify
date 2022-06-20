@@ -25,14 +25,16 @@ export const Sluggable = (propsNames: string[], config?: ISlugConfig) => (target
     target.$beforeInsert = async function (queryContext: QueryContext) {
         await insert.apply(this, [queryContext]);
         const prop: string = Reflect.getMetadata(ReflectSlugProp, target);
-        this[prop] = await sluggableService.create(this, prop, propsNames);
+        const instance = this as any;
+        instance[prop] = await sluggableService.create(this, prop, propsNames);
     }
 
     target.$beforeUpdate = async function (queryOptions, args: QueryContext) {
         await update.apply(this, [queryOptions, args]);
         if (finalConfig?.edit) {
             const prop: string = Reflect.getMetadata(ReflectSlugProp, target);
-            this[prop] = await sluggableService.create(this, prop, propsNames);
+            const instance = this as any;
+            instance[prop] = await sluggableService.create(this, prop, propsNames);
         }
     }
 }
