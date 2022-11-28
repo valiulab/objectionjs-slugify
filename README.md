@@ -46,4 +46,4 @@ objectionjs-slugify is an MIT-licensed open source project. If you want to contr
 
 ## License
 
-Objection-slugify - [LICENSE](https://github.com/ralcorta/objectionjs-slugify/blob/main/LICENSE "LICENSE")
+Objection-slugify - [LICENSE](https://github.com/valiulab/objectionjs-slugify/blob/main/LICENSE "LICENSE")
